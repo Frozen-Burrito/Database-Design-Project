@@ -1,29 +1,27 @@
 <?php 
 
-function conectarDB($dbName = 'crud_tienda', $user = 'root', $password = '')
+function conectarDB()
 {
-  $db = new PDO("mysql:host=localhost; dbname={$dbName}", $user, $password);
+  //Get Heroku ClearDB connection information
+  $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+  $cleardb_server = $cleardb_url["host"];
+  $cleardb_username = $cleardb_url["user"];
+  $cleardb_password = $cleardb_url["pass"];
+  $cleardb_db = substr($cleardb_url["path"],1);
+  $active_group = 'default';
+  $query_builder = TRUE;
 
+  echo "Creando conexion";
+  
+  $db = new PDO("mysql:host={$cleardb_server}; dbname={$cleardb_db}", $cleardb_username, $cleardb_password);
+  
   if (!$db) {
     echo "Error: No se pudo conectar la base de datos";
     exit;
   }
 
+  echo "Conexion exitosa";
+
   return $db;
 }
-
-
-// $query = "SELECT title FROM propiedades";
-
-// // Consultar bd
-// $propiedades = $db->query($query)->fetchAll();
-
-// $statement = $db->prepare($query);
-
-// $statement->execute();
-
-// $resultado = $statement->fetch( PDO::FETCH_ASSOC );
-
-// var_dump($resultado);
-
 ?>
