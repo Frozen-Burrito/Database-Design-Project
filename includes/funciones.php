@@ -32,35 +32,35 @@ function incluirTemplate(string $template, bool $navegacion = true, string $ruta
 function url_for($ruta, $id = -1) 
 {
   $urls = [
-    'inicio' => "/8_crud/index.php",
-    'tienda' => "/8_crud/tienda.php",
-    'cuenta' => "/8_crud/cuenta.php",
-    'clientes/crear' => "/8_crud/crear_cuenta.php",
-    'login' => "/8_crud/login.php",
-    'logout' => "/8_crud/logout.php",
+    'inicio' => "/index.php",
+    'tienda' => "/tienda.php",
+    'cuenta' => "/cuenta.php",
+    'clientes/crear' => "/crear_cuenta.php",
+    'login' => "/login.php",
+    'logout' => "/logout.php",
 
-    'productos' => "/8_crud/crud/productos/",
-    'productos/crear' => "/8_crud/crud/productos/crear.php",
-    'productos/editar' => "/8_crud/crud/productos/editar.php?id=$id",
+    'productos' => "/crud/productos/",
+    'productos/crear' => "/crud/productos/crear.php",
+    'productos/editar' => "/crud/productos/editar.php?id=$id",
 
-    'tipos' => "/8_crud/crud/tipos/",
-    'tipos/crear' => "/8_crud/crud/tipos/crear.php",
-    'tipos/editar' => "/8_crud/crud/tipos/editar.php?id=$id",
+    'tipos' => "/crud/tipos/",
+    'tipos/crear' => "/crud/tipos/crear.php",
+    'tipos/editar' => "/crud/tipos/editar.php?id=$id",
 
-    'sucursales' => "/8_crud/crud/sucursales/",
-    'sucursales/crear' => "/8_crud/crud/sucursales/crear.php",
-    'sucursales/editar' => "/8_crud/crud/sucursales/editar.php?id=$id",
-    'sucursales/inventario' => "/8_crud/crud/sucursales/inventario/?id=$id",
-    'sucursales/inventario/crear' => "/8_crud/crud/sucursales/inventario/crear.php?idSucursal=$id",
-    'sucursales/inventario/editar' => "/8_crud/crud/sucursales/inventario/editar.php?id=$id",
+    'sucursales' => "/crud/sucursales/",
+    'sucursales/crear' => "/crud/sucursales/crear.php",
+    'sucursales/editar' => "/crud/sucursales/editar.php?id=$id",
+    'sucursales/inventario' => "/crud/sucursales/inventario/?id=$id",
+    'sucursales/inventario/crear' => "/crud/sucursales/inventario/crear.php?idSucursal=$id",
+    'sucursales/inventario/editar' => "/crud/sucursales/inventario/editar.php?id=$id",
 
-    'ordenes' => "/8_crud/ordenes/",
-    'ordenes/crear' => "/8_crud/ordenes/crear.php?producto=$id",
-    'ordenes/editar' => "/8_crud/ordenes/editar.php?id=$id",
+    'ordenes' => "/ordenes/",
+    'ordenes/crear' => "/ordenes/crear.php?producto=$id",
+    'ordenes/editar' => "/ordenes/editar.php?id=$id",
 
-    'usuarios' => "/8_crud/crud/usuarios/",
-    'usuarios/crear' => "/8_crud/crud/usuarios/crear.php?tipo=$id",
-    'usuarios/editar' => "/8_crud/crud/usuarios/editar.php?id=$id",
+    'usuarios' => "/crud/usuarios/",
+    'usuarios/crear' => "/crud/usuarios/crear.php?tipo=$id",
+    'usuarios/editar' => "/crud/usuarios/editar.php?id=$id",
     // "properties/create" => "/bienesraices/admin/properties/create.php" 
   ];
 
