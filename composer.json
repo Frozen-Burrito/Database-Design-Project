@@ -1,0 +1,17 @@
+{
+    "name": "equipo_8/crud",
+    "description": "Un sistema CRUD para administrar tiendas de mediana escala.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Fernando Mendoza",
+            "email": "a18300290@ceti.mx"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\" : "./classes"
+        }
+    }
+}
