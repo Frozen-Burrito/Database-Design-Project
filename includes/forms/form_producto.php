@@ -17,7 +17,8 @@
     placeholder="" 
     value="<?php echo $producto->precio; ?>"
     min="0"
-    max="1000000">
+    max="1000000"
+    step="0.01">
 
   <label for="floatingCategoria">Precio</label>
 </div>

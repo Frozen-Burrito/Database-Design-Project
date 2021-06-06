@@ -34,7 +34,7 @@
     <?php for ($i = 0; $i < $rowCount; $i++) : ?>
       <div class="row mb-5">
 
-      <?php for ($j = $i; $j < $i + 3; $j++) : ?>
+      <?php for ($j = ($i * 3); $j < ($i * 3) + 3; $j++) : ?>
         <?php if ($j < count($productos) && !is_null($productos[$j])) : ?>
           <div class="col-4">
             <div class="card" style="width: 20rem;">

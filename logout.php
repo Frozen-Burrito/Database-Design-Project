@@ -6,4 +6,4 @@ if (!isset($_SESSION)) {
 
 $_SESSION = [];
 
-header('Location: /8_crud/');
+header('Location: /');
