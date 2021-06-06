@@ -4,7 +4,7 @@
   use App\Producto;
   use App\Tipo;
 
-  verificarLogin(3);
+  verificarLogin(2);
 
   $id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
 

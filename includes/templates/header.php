@@ -51,10 +51,12 @@
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li><a class="dropdown-item" href="<?php echo url_for('productos'); ?>">Productos</a></li>
-                    <li><a class="dropdown-item" href="<?php echo url_for('tipos'); ?>">Tipos</a></li>
-                    <li><a class="dropdown-item" href="<?php echo url_for('sucursales'); ?>">Sucursales</a></li>
-                    <li><a class="dropdown-item" href="<?php echo url_for('ordenes'); ?>">Órdenes</a></li>
-                    <li><a class="dropdown-item" href="<?php echo url_for('usuarios'); ?>">Usuarios</a></li>
+                    <?php if($_SESSION['nivel'] > 2) : ?>
+                      <li><a class="dropdown-item" href="<?php echo url_for('tipos'); ?>">Tipos</a></li>
+                      <li><a class="dropdown-item" href="<?php echo url_for('sucursales'); ?>">Sucursales</a></li>
+                      <li><a class="dropdown-item" href="<?php echo url_for('ordenes'); ?>">Órdenes</a></li>
+                      <li><a class="dropdown-item" href="<?php echo url_for('usuarios'); ?>">Usuarios</a></li>
+                    <?php endif; ?>
                   </ul>
                 </li>
               <?php endif; ?>

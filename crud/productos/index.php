@@ -4,7 +4,7 @@
   use App\Producto;
   use App\Tipo;
 
-  verificarLogin(3);
+  verificarLogin(2);
 
   $productos = Producto::findMany();
 

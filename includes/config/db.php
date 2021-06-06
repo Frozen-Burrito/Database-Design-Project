@@ -10,8 +10,6 @@ function conectarDB()
   $cleardb_db = substr($cleardb_url["path"],1);
   $active_group = 'default';
   $query_builder = TRUE;
-
-  echo "Creando conexion";
   
   $db = new PDO("mysql:host={$cleardb_server}; dbname={$cleardb_db}", $cleardb_username, $cleardb_password);
   
@@ -19,9 +17,7 @@ function conectarDB()
     echo "Error: No se pudo conectar la base de datos";
     exit;
   }
-
-  echo "Conexion exitosa";
-
+  
   return $db;
 }
 ?>
