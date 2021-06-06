@@ -3,6 +3,7 @@
 
   use App\Orden;
   use App\Producto;
+  use App\Cliente;
   use App\Usuario;
 
   verificarLogin(1);
@@ -11,6 +12,7 @@
 
   $ordenes = Orden::findMany();
   $usuario = Usuario::findWhere('username', $_SESSION['usuario']);
+  $cliente = Cliente::findWhere('idUsuario', $usuario->id);
   $productos = Producto::findMany();
 
   $ordenesFiltradas = [];
@@ -24,7 +26,7 @@
   switch ($nivel) {
     case 1:
       foreach($ordenes as $orden) {
-        if ($orden->idCliente == $usuario->id) {
+        if ($orden->idCliente == $cliente->id) {
           $ordenesFiltradas[] = $orden;
         }
       }

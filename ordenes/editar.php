@@ -3,6 +3,7 @@
 
   use App\Orden;
   use App\Producto;
+  use App\Cliente;
   use App\Usuario;
 
   verificarLogin(1);
@@ -16,6 +17,7 @@
   $orden = Orden::findOne($id);
   $productos = Producto::findMany();
   $usuario = Usuario::findOne($orden->idCliente);
+  $cliente = Cliente::findOne($orden->idCliente);
   $errores = Orden::getErrores();
 
   if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -23,8 +25,7 @@
     
     $args['fecha'] = date("Y-m-d");
     $args['monto'] = (int) $args['cantidad'] * 2;
-    $args['idCliente'] = $usuario->id;
-
+    $args['idCliente'] = $cliente->id;
     
     $orden->aplicarCambios($args);
 

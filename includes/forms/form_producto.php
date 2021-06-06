@@ -30,12 +30,14 @@
   <select id="selectTipo" class="form-select" name="producto[idTipo]">
     <option value="">Selecciona un Tipo</option>
     <?php foreach($tipos as $tipo) : ?>
+      <?php if($tipo->categoria == 0) : ?>
         <option 
-          <?php echo $producto->idTipo === $tipo->id ? 'selected' : ''; ?> 
+          <?php echo $producto->idTipo == $tipo->id ? 'selected' : ''; ?> 
           value="<?php echo $tipo->id; ?>"
         >
           <?php echo $tipo->nombre; ?>
         </option>
+      <?php endif; ?>
     <?php endforeach; ?>
   </select>
 </div>

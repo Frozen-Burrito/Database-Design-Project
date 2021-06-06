@@ -30,14 +30,14 @@
   </div>
 </section>
 <section class="py-5 container">
-  <div class="container">
+  <div class="container-md">
     <?php for ($i = 0; $i < $rowCount; $i++) : ?>
       <div class="row mb-5">
 
       <?php for ($j = $i; $j < $i + 3; $j++) : ?>
         <?php if ($j < count($productos) && !is_null($productos[$j])) : ?>
-          <div class="col">
-            <div class="card" style="width: 22rem;">
+          <div class="col-4">
+            <div class="card" style="width: 20rem;">
               <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.2KdMLsskO-By1dqK2epgegHaHa%26pid%3DApi&f=1" class="card-img-top" alt="Imagen de relleno">
               <div class="card-body">
                 <h4 class="card-title"><?php echo $productos[$j]->nombre; ?></h4>

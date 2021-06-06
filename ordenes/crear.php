@@ -3,6 +3,7 @@
   
   use App\Orden;
   use App\Producto;
+  use App\Cliente;
   use App\Usuario;
 
   verificarLogin(1);
@@ -10,6 +11,7 @@
   $orden = new Orden;
   $productos = Producto::findMany();
   $usuario = Usuario::findWhere('username', $_SESSION['usuario']);
+  $cliente = Cliente::findWhere('idUsuario', $usuario->id);
   $errores = Orden::getErrores();
 
   $idProducto = filter_var($_GET['producto'] ?? null, FILTER_VALIDATE_INT);
@@ -24,7 +26,7 @@
 
     $args['fecha'] = date("Y-m-d");
     $args['monto'] = $args['cantidad'] * 2;
-    $args['idCliente'] = $usuario->id;
+    $args['idCliente'] = $cliente->id;
 
     $orden = new Orden($args);
 

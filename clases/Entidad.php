@@ -68,6 +68,10 @@ class Entidad {
     $queryLimit = $limit > 0 ? " LIMIT " . $limit : "";
     $query = "SELECT * FROM " . static::$tabla . $queryLimit;
 
+    if (static::$tabla == "producto") {
+      $query = "CALL `todosLosProductos`();";
+    }
+    
     $resultado = self::selectSQL($query);
     return $resultado;
   }
