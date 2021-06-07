@@ -12,7 +12,11 @@ function verificarLogin($nivel = 0, $redireccionar = true)
   // printd($permisosUsuario);
 
   if ($nivel > $permisosUsuario) {
-    header('Location: ' . url_for('inicio'));
+    if ($permisosUsuario == 0) {
+      header('Location: ' . url_for('login'));
+    } else {
+      header('Location: ' . url_for('inicio')); 
+    }
   }
 }
 
